@@ -2,50 +2,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="semanticUI/semantic.min.css">
-<script src="semanticUI/semantic.min.js"></script>
+<script src="jquery-2.2.1.min.js"></script>
+<script>
+	$(function() {
+		$("#header").load("header.html");
+		$("#footer").load("footer.html");
+	});
+</script>
 <title>FantaFormazioneWeb</title>
 </head>
 <body>
-	<div class="ui attached stackable menu">
-		<div class="ui container">
-			<a class="item">
-				<i class="home icon"></i>
-				Home
-			</a>
-			<a class="item">
-				<i class="grid layout icon"></i>
-				Browse
-			</a>
-			<a class="item">
-				<i class="mail icon"></i>
-				Messages
-			</a>
-			<div class="ui simple dropdown item">
-				More
-				<i class="dropdown icon"></i>
-				<div class="menu">
-					<a class="item">
-						<i class="edit icon"></i>
-						Edit Profile
-					</a>
-					<a class="item">
-						<i class="globe icon"></i>
-						Choose Language
-					</a>
-					<a class="item">
-						<i class="settings icon"></i>
-						Account Settings
-					</a>
-				</div>
-			</div>
-			<div class="right item">
-				<div class="ui input">
-					<input placeholder="Search..." type="text">
-				</div>
-			</div>
-		</div>
-	</div>
+	<div id="header"></div>
+	
 	<h2 class="ui center aligned icon header">
 		<img class="ui centered medium image" src="img/campoGreen.png">
 		<div class="content">
@@ -62,5 +30,7 @@
 			</div>
 		</div>
 	</h2>
+	
+	<div id="footer"></div>
 </body>
 </html>
