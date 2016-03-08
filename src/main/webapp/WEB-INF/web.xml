@@ -5,6 +5,6 @@
 	id="WebApp_ID" version="2.5">
 	<display-name>FantaFormazioneWebHTML</display-name>
 	<welcome-file-list>
-		<welcome-file>home.html</welcome-file>
+		<welcome-file>index.html</welcome-file>
 	</welcome-file-list>
 </web-app>
