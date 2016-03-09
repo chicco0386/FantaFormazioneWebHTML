@@ -17,7 +17,19 @@
 <body>
 	<div id="header"></div>
 	<h3 class="ui center aligned header">Crea formazione</h3>
-	<div class="ui stackable two column grid" style="position: relative;">
+	<div class="ui one column stackable center aligned page grid">
+		<div class="column twelve wide">
+			<div class="ui form">
+				<div class="inline fields">
+					<div class="five wide field">
+						<label>Nome formazione</label>
+						<input placeholder="Nome formazione" type="text">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="ui two column stackable grid" style="position: relative;">
 		<div class="column">
 			<table class="ui compact small striped selectable celled sortable table">
 				<thead>
@@ -107,6 +119,8 @@
 					</tr>
 				</tbody>
 			</table>
+			<button class="ui primary button">Salva</button>
+			<button class="ui button">Annulla</button>
 		</div>
 	</div>
 	<div id="footer"></div>
