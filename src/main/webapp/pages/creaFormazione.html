@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="../jquery-2.2.1.min.js"></script>
+<script src="../tablesort.min.js"></script>
+<script>
+	$(function() {
+		$("#header").load("header.html");
+		$("#footer").load("footer.html");
+
+		$('.sortable.table').tablesort();
+	});
+</script>
+<title>FantaFormazioneWeb</title>
+</head>
+<body>
+	<div id="header"></div>
+	<h3 class="ui center aligned header">Crea formazione</h3>
+	<div class="ui stackable two column grid" style="position: relative;">
+		<div class="column">
+			<table class="ui compact small striped selectable celled sortable table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Status</th>
+						<th>Notes</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>John</td>
+						<td>No Action</td>
+						<td>None</td>
+					</tr>
+					<tr>
+						<td>Jamie</td>
+						<td>Approved</td>
+						<td>Requires call</td>
+					</tr>
+					<tr>
+						<td>Jill</td>
+						<td>Denied</td>
+						<td>None</td>
+					</tr>
+					<tr>
+						<td>John</td>
+						<td>No Action</td>
+						<td>None</td>
+					</tr>
+					<tr>
+						<td>Jamie</td>
+						<td>Approved</td>
+						<td>Requires call</td>
+					</tr>
+					<tr>
+						<td>Jill</td>
+						<td>Denied</td>
+						<td>None</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="ui vertical divider">
+			<i class="chevron left icon"></i>
+			<i class="chevron right icon"></i>
+		</div>
+		<div class="column">
+			<table class="ui compact small striped selectable celled sortable table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Status</th>
+						<th>Notes</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>John</td>
+						<td>No Action</td>
+						<td>None</td>
+					</tr>
+					<tr>
+						<td>Jamie</td>
+						<td>Approved</td>
+						<td>Requires call</td>
+					</tr>
+					<tr>
+						<td>Jill</td>
+						<td>Denied</td>
+						<td>None</td>
+					</tr>
+					<tr>
+						<td>John</td>
+						<td>No Action</td>
+						<td>None</td>
+					</tr>
+					<tr>
+						<td>Jamie</td>
+						<td>Approved</td>
+						<td>Requires call</td>
+					</tr>
+					<tr>
+						<td>Jill</td>
+						<td>Denied</td>
+						<td>None</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<div id="footer"></div>
+</body>
+</html>
