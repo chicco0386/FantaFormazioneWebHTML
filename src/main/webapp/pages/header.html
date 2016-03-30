@@ -4,11 +4,12 @@
 <meta charset="UTF-8">
 <link rel="stylesheet" type="text/css" href="../semanticUI/semantic.min.css">
 <script src="../semanticUI/semantic.min.js"></script>
-<script src="../jquery-2.2.1.min.js"></script>
+<script src="../scripts/jquery-2.2.1.min.js"></script>
+<script src="../angularJS/angular.min.js"></script>
 <title>FantaFormazioneWeb</title>
 </head>
 <body>
-	<div class="ui attached stackable menu">
+	<div class="ui attached stackable menu" ng-app="" ng-init="person={firstName:'John',lastName:'Doe'}">
 		<div class="ui container">
 			<a href="home.html" class="header item">
 				<img class="logo" src="../img/campoGreen.png">
@@ -47,7 +48,7 @@
 			<div class="right menu">
 				<div class="item">
 					<i class="child icon"></i>
-					Benvenuto, Utente
+					Benvenuto, {{person.firstName}} {{person.lastName}}
 				</div>
 				<a class="item">Sign Up</a>
 				<a class="item">Log-in</a>
