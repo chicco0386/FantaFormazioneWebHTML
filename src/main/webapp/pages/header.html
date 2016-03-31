@@ -6,10 +6,14 @@
 <script src="../semanticUI/semantic.min.js"></script>
 <script src="../scripts/jquery-2.2.1.min.js"></script>
 <script src="../angularJS/angular.min.js"></script>
+<script src="../angularJS/angular-resource.js"></script>
+<script src="../scripts/fantaFormazione.js"></script>
 <title>FantaFormazioneWeb</title>
 </head>
 <body>
-	<div class="ui attached stackable menu" ng-app="" ng-init="person={firstName:'John',lastName:'Doe'}">
+
+	<div class="ui attached stackable menu"  ng-app="fantaApp" ng-init="person={firstName:'John',lastName:'Doe'}" ng-controller="stagioniCtrl">
+		Stagioni: {{stagioni}}
 		<div class="ui container">
 			<a href="home.html" class="header item">
 				<img class="logo" src="../img/campoGreen.png">
@@ -50,8 +54,8 @@
 					<i class="child icon"></i>
 					Benvenuto, {{person.firstName}} {{person.lastName}}
 				</div>
-				<a class="item">Sign Up</a>
-				<a class="item">Log-in</a>
+				<a class="item" ng-hide="logged">Sign Up</a>
+				<a class="item" ng-hide="logged">Log-in</a>
 				<a class="item">Log-out</a>
 			</div>
 		</div>
