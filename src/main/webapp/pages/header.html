@@ -11,9 +11,12 @@
 <title>FantaFormazioneWeb</title>
 </head>
 <body>
-
-	<div class="ui attached stackable menu"  ng-app="fantaApp" ng-init="person={firstName:'John',lastName:'Doe'}" ng-controller="stagioniCtrl">
-		Stagioni: {{stagioni}}
+	<div class="ui attached stackable menu" ng-app="fantaApp" ng-init="person={firstName:'John',lastName:'Doe'}" ng-controller="stagioniCtrl">
+		<select name="singleSelect" ng-model="stagioniSelected">
+			<option value="">---Please select---</option> <!-- not selected / blank option -->
+			<option ng-repeat="current in stagioniSel" value="{{current.code}}">{{current.value}}</option>
+		</select>
+		<tt>singleSelect = {{stagioniSelected}}</tt>
 		<div class="ui container">
 			<a href="home.html" class="header item">
 				<img class="logo" src="../img/campoGreen.png">
