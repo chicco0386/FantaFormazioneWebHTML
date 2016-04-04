@@ -1,67 +1,53 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<link rel="stylesheet" type="text/css" href="../semanticUI/semantic.min.css">
-<script src="../semanticUI/semantic.min.js"></script>
-<script src="../scripts/jquery-2.2.1.min.js"></script>
-<script src="../angularJS/angular.min.js"></script>
-<script src="../angularJS/angular-resource.js"></script>
-<script src="../scripts/fantaFormazione.js"></script>
-<title>FantaFormazioneWeb</title>
-</head>
-<body>
-	<div class="ui attached stackable menu" ng-app="fantaApp" ng-init="person={firstName:'John',lastName:'Doe'}" ng-controller="stagioniCtrl">
-		<select name="singleSelect" ng-model="stagioniSelected">
-			<option value="">---Please select---</option> <!-- not selected / blank option -->
-			<option ng-repeat="current in stagioniSel" value="{{current.code}}">{{current.value}}</option>
-		</select>
-		<tt>singleSelect = {{stagioniSelected}}</tt>
-		<div class="ui container">
-			<a href="home.html" class="header item">
-				<img class="logo" src="../img/campoGreen.png">
-				Fanta Formazione
-			</a>
-			<div class="ui simple dropdown item">
-				<i class="database icon"></i>
-				Popola DB
-				<i class="dropdown icon"></i>
-				<div class="menu">
-					<a class="item">Salva giornate</a>
-					<a class="item">Salva giocatori</a>
-					<a class="item">Salva statistiche</a>
-					<a class="item">Salva probabili FG</a>
-					<a class="item">Salva probabili Gazzetta</a>
-				</div>
-			</div>
-			<div class="ui simple dropdown item">
-				<i class="bar chart icon"></i>
-				Statistiche
-				<i class="dropdown icon"></i>
-				<div class="menu">
-					<a href="statistiche.html" class="item">Statistiche</a>
-					<a href="statisticheResume.html" class="item">Statistiche resume</a>
-				</div>
-			</div>
-			<div class="ui simple dropdown item">
-				<i class="users icon"></i>
-				Formazione
-				<i class="dropdown icon"></i>
-				<div class="menu">
-					<a href="creaFormazione.html" class="item">Crea nuova formazione </a>
-					<a class="item">Calcola formazione </a>
-				</div>
-			</div>
-			<div class="right menu">
-				<div class="item">
-					<i class="child icon"></i>
-					Benvenuto, {{person.firstName}} {{person.lastName}}
-				</div>
-				<a class="item" ng-hide="logged">Sign Up</a>
-				<a class="item" ng-hide="logged">Log-in</a>
-				<a class="item">Log-out</a>
+
+<div class="ui attached stackable menu" ng-init="person={firstName:'John',lastName:'Doe'}" ng-controller="stagioniCtrl">
+	<select name="singleSelect" ng-model="stagioniComboSel">
+		<option value="">---Please select---</option>
+		<!-- not selected / blank option -->
+		<option ng-repeat="current in stagioniCombo" value="{{current.code}}">{{current.value}}</option>
+	</select>
+	<div class="ui container">
+		<a href="home.html" class="header item">
+			<img class="logo" src="../img/campoGreen.png">
+			Fanta Formazione
+		</a>
+		<div class="ui simple dropdown item" ng-hide="!stagioniComboSel">
+			<i class="database icon"></i>
+			Popola DB
+			<i class="dropdown icon"></i>
+			<div class="menu">
+				<a class="item">Salva giornate</a>
+				<a class="item">Salva giocatori</a>
+				<a class="item">Salva statistiche</a>
+				<a class="item">Salva probabili FG</a>
+				<a class="item">Salva probabili Gazzetta</a>
 			</div>
 		</div>
+		<div class="ui simple dropdown item">
+			<i class="bar chart icon"></i>
+			Statistiche
+			<i class="dropdown icon"></i>
+			<div class="menu">
+				<a href="statistiche.html" class="item">Statistiche</a>
+				<a href="statisticheResume.html" class="item">Statistiche resume</a>
+			</div>
+		</div>
+		<div class="ui simple dropdown item">
+			<i class="users icon"></i>
+			Formazione
+			<i class="dropdown icon"></i>
+			<div class="menu">
+				<a href="creaFormazione.html" class="item">Crea nuova formazione </a>
+				<a class="item">Calcola formazione </a>
+			</div>
+		</div>
+		<div class="right menu">
+			<div class="item">
+				<i class="child icon"></i>
+				Benvenuto, {{person.firstName}} {{person.lastName}}
+			</div>
+			<a class="item" ng-hide="logged">Sign Up</a>
+			<a class="item" ng-hide="logged">Log-in</a>
+			<a class="item">Log-out</a>
+		</div>
 	</div>
-</body>
-</html>
+</div>

@@ -3,16 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <script src="../scripts/jquery-2.2.1.min.js"></script>
-<script>
-	$(function() {
-		$("#header").load("header.html");
-		$("#footer").load("footer.html");
-	});
-</script>
+<link rel="stylesheet" type="text/css" href="../semanticUI/semantic.min.css">
+<script src="../semanticUI/semantic.min.js"></script>
+<script src="../scripts/jquery-2.2.1.min.js"></script>
+<script src="../angularJS/angular.min.js"></script>
+<script src="../angularJS/angular-resource.js"></script>
+<script src="../scripts/fantaFormazione.js"></script>
 <title>FantaFormazioneWeb</title>
 </head>
-<body>
-	<div id="header"></div>
+<body ng-app="fantaApp">
+	<div header></div>
 	<h2 class="ui center aligned icon header">
 		<div class="content">
 			<p>Benvenuto in Fanta Formazione</p>
@@ -29,6 +29,6 @@
 			</div>
 		</div>
 	</h2>
-	<div id="footer"></div>
+	<div footer></div>
 </body>
 </html>

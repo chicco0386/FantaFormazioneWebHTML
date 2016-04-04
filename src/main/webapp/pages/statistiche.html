@@ -3,19 +3,22 @@
 <head>
 <meta charset="UTF-8">
 <script src="../scripts/jquery-2.2.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="../semanticUI/semantic.min.css">
+<script src="../semanticUI/semantic.min.js"></script>
+<script src="../scripts/jquery-2.2.1.min.js"></script>
+<script src="../angularJS/angular.min.js"></script>
+<script src="../angularJS/angular-resource.js"></script>
+<script src="../scripts/fantaFormazione.js"></script>
 <script src="../scripts/tablesort.min.js"></script>
 <script>
-	$(function() {
-		$("#header").load("header.html");
-		$("#footer").load("footer.html");
-		
+	$(function() {		
 		$('.sortable.table').tablesort();
 	});
 </script>
 <title>FantaFormazioneWeb</title>
 </head>
-<body>
-	<div id="header"></div>
+<body ng-app="fantaApp">
+	<div header></div>
 	
 	<h3 class="ui center aligned header">
     	Statistiche
@@ -63,6 +66,6 @@
 		</tbody>
 	</table>
 	
-	<div id="footer"></div>
+	<div footer></div>
 </body>
 </html>
