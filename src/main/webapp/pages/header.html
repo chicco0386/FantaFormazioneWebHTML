@@ -1,10 +1,4 @@
-
-<div class="ui attached stackable menu" ng-init="person={firstName:'John',lastName:'Doe'}" ng-controller="stagioniCtrl">
-	<select name="singleSelect" ng-model="stagioniComboSel">
-		<option value="">---Please select---</option>
-		<!-- not selected / blank option -->
-		<option ng-repeat="current in stagioniCombo" value="{{current.code}}">{{current.value}}</option>
-	</select>
+<div class="ui attached stackable menu" ng-init="person={firstName:'John',lastName:'Doe'}" >
 	<div class="ui container">
 		<a href="home.html" class="header item">
 			<img class="logo" src="../img/campoGreen.png">
@@ -27,7 +21,7 @@
 			Statistiche
 			<i class="dropdown icon"></i>
 			<div class="menu">
-				<a href="statistiche.html" class="item">Statistiche</a>
+				<a href="#/statistiche.html" class="item">Statistiche</a>
 				<a href="statisticheResume.html" class="item">Statistiche resume</a>
 			</div>
 		</div>

@@ -1,34 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="fantaApp">
 <head>
 <meta charset="UTF-8">
 <script src="../scripts/jquery-2.2.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../semanticUI/semantic.min.css">
 <script src="../semanticUI/semantic.min.js"></script>
-<script src="../scripts/jquery-2.2.1.min.js"></script>
 <script src="../angularJS/angular.min.js"></script>
 <script src="../angularJS/angular-resource.js"></script>
+<script src="../angularJS/angular-route.min.js"></script>
+<script src="../scripts/tablesort.min.js"></script>
 <script src="../scripts/fantaFormazione.js"></script>
+<script src="../scripts/fantaSemantic.js"></script>
 <title>FantaFormazioneWeb</title>
 </head>
-<body ng-app="fantaApp">
-	<div header></div>
+<body ng-controller="mainCtrl">
+	<div ng-include="'header.html'"></div>
+	<div class="ui center aligned small header">
+		<select class="ui dropdown" ng-model="stagioniComboSel">
+			<option value="">Seleziona stagione</option>
+			<option value="2014/15">2014/15</option>
+			<!-- not selected / blank option -->
+			<option ng-repeat="current in stagioniCombo" value="{{current.code}}">{{current.value}}</option>
+		</select>
+		<button class="ui button" ng-click="resetStagione()">Reset</button>
+	</div>
 	<h2 class="ui center aligned icon header">
-		<div class="content">
-			<p>Benvenuto in Fanta Formazione</p>
-			<img class="ui centered medium image" src="../img/campoGreen.png">
-			<div class="sub header">
-				Cosa ti permette di fare FantaFormazione (FF):
-				<div class="ui bulleted list">
-					<div class="item">Ti permette di controllare tutte le statistiche dei giocatori del campionato di serie A</div>
-					<div class="item">Ti permette di tenere sotto controllo in un unico posto tutte le tue formazioni fanta calcio</div>
-					<div class="item">Ti permette di tenere d'occhio le statistiche delle tue formazioni di fanta calcio</div>
-					<div class="item">Ti permette di avere con un solo click la TUA migliore formazione da schierare in campo per la prossima giornata di campionato</div>
-				</div>
-				Cosa aspetti inizia subito a gestire le tue formazioni e chiedere quale potrebbe essere la formazione migliore da schierare in campo.
+		<p>Benvenuto in Fanta Formazione</p>
+		<img class="ui centered medium image" src="../img/campoGreen.png">
+		<div class="sub header">
+			Cosa ti permette di fare FantaFormazione (FF):
+			<div class="ui bulleted list">
+				<div class="item">Ti permette di controllare tutte le statistiche dei giocatori del campionato di serie A</div>
+				<div class="item">Ti permette di tenere sotto controllo in un unico posto tutte le tue formazioni fanta calcio</div>
+				<div class="item">Ti permette di tenere d'occhio le statistiche delle tue formazioni di fanta calcio</div>
+				<div class="item">Ti permette di avere con un solo click la TUA migliore formazione da schierare in campo per la prossima giornata di campionato</div>
 			</div>
+			Cosa aspetti inizia subito a gestire le tue formazioni e chiedere quale potrebbe essere la formazione migliore da schierare in campo.
 		</div>
 	</h2>
-	<div footer></div>
+	<div ng-include="'footer.html'"></div>
 </body>
 </html>

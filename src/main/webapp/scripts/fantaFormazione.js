@@ -1,20 +1,9 @@
 (function() {
 
 	var app = angular.module('fantaApp', [ 'ngResource' ]);
-	
-	app.directive("header", function() {
-	    return {
-	        templateUrl : "../pages/header.html"
-	    };
-	});
-	
-	app.directive("footer", function() {
-	    return {
-	        templateUrl : "../pages/footer.html"
-	    };
-	});
 
 	app.run(function($rootScope) {
+		$rootScope.stagioniComboSel = null;
 		$rootScope.logged = true;
 	});
 
@@ -33,8 +22,7 @@
 		this.value = value;
 	};
 
-	app.controller("stagioniCtrl", function($scope, $log, stagioniFactory) {
-		$scope.stagioniComboSel = null;
+	app.controller("mainCtrl", function($rootScope, $scope, $log, stagioniFactory) {
 		$scope.stagioniCombo = [];
 		var stagioniResponse = stagioniFactory.query();
 		stagioniFactory.query(function(data) {
@@ -46,10 +34,9 @@
 			});
 		});
 		
-		$scope.notSelected = function() {
-			$log.log('null' == $scope.stagioniComboSel);
-			return 'null' == $scope.stagioniComboSel;
-		}
-		
+		$rootScope.resetStagione = function(){
+			$log.log("resetStagione");
+			$rootScope.stagioniComboSel = "";
+		};
 	});
 })();

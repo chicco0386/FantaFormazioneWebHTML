@@ -5,20 +5,15 @@
 <script src="../scripts/jquery-2.2.1.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../semanticUI/semantic.min.css">
 <script src="../semanticUI/semantic.min.js"></script>
-<script src="../scripts/jquery-2.2.1.min.js"></script>
 <script src="../angularJS/angular.min.js"></script>
 <script src="../angularJS/angular-resource.js"></script>
-<script src="../scripts/fantaFormazione.js"></script>
 <script src="../scripts/tablesort.min.js"></script>
-<script>
-	$(function() {		
-		$('.sortable.table').tablesort();
-	});
-</script>
+<script src="../scripts/fantaSemantic.js"></script>
+<script src="../scripts/fantaFormazione.js"></script>
 <title>FantaFormazioneWeb</title>
 </head>
 <body ng-app="fantaApp">
-	<div header></div>
+	<div ng-include="'header.html'"></div>
 	<h3 class="ui center aligned header">Crea formazione</h3>
 	<div class="ui centered aligned padded page grid">
 		<div class="ui form center">
@@ -122,6 +117,6 @@
 			<button class="ui button">Annulla</button>
 		</div>
 	</div>
-	<div footer></div>
+	<div ng-include="'footer.html'"></div>
 </body>
 </html>
