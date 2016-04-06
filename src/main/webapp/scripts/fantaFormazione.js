@@ -1,6 +1,22 @@
 (function() {
 
-	var app = angular.module('fantaApp', [ 'ngResource' ]);
+	var app = angular.module('fantaApp', [ 'ngRoute', 'ngResource' ]);
+
+//	app.config(function($routeProvider, $locationProvider) {
+//		$routeProvider.when('/', {
+//			templateUrl : 'pages/home.html',
+//			controller : mainCtrl
+//		}).when('/statistiche', {
+//			templateUrl : 'pages/statistiche.html',
+//			controller : mainCtrl
+//		}).when('/creaFormazione', {
+//			templateUrl : 'pages/creaFormazione.html.html',
+//			controller : mainCtrl
+//		});
+//
+//		// use the HTML5 History API
+//		$locationProvider.html5Mode(true);
+//	});
 
 	app.run(function($rootScope) {
 		$rootScope.stagioniComboSel = null;
@@ -16,11 +32,12 @@
 			}
 		});
 	});
-	
-	function stagioniCombo(code, value){
+
+	function stagioniCombo(code, value) {
 		this.code = code;
 		this.value = value;
-	};
+	}
+	;
 
 	app.controller("mainCtrl", function($rootScope, $scope, $log, stagioniFactory) {
 		$scope.stagioniCombo = [];
@@ -29,12 +46,12 @@
 			angular.forEach(data, function(item) {
 				if (item.code) {
 					var toInsert = new stagioniCombo(item.code, item.value);
-		            $scope.stagioniCombo.push(toInsert);
-		        }
+					$scope.stagioniCombo.push(toInsert);
+				}
 			});
 		});
-		
-		$rootScope.resetStagione = function(){
+
+		$rootScope.resetStagione = function() {
 			$log.log("resetStagione");
 			$rootScope.stagioniComboSel = "";
 		};
